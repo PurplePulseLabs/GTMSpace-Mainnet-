@@ -6,13 +6,16 @@ import Header from "./components/Header.jsx";
 import Loader from "./components/Loader.jsx";
 import { useEffect } from "react";
 import { useAccount } from "wagmi";
+import { useMediaQuery } from "react-responsive";
+import MobileApp from "./components/MobileApp.jsx";
 
 const Home = lazy(() => import("./pages/HomeFinal.jsx"));
 const Landing = lazy(() => import("./pages/landing.jsx"));
 const Game = lazy(() => import("./pages/game.jsx"));
 const NotFound = lazy(() => import("./pages/not-found.jsx"));
-
 const App = () => {
+   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
    useEffect(() => {
       window.ethereum.on("accountsChanged", function (accounts) {
          console.log("Ethereum accounts changed:", accounts);
@@ -41,16 +44,20 @@ const App = () => {
 
    return (
       <>
-         <Router>
-            <Suspense fallback={<Loader />}>
-               <Routes>
-                  <Route path="/" element={<Home />} />
-                  {/* <Route path="/home" element={<Home />} /> */}
-                  <Route path="/game" element={<Game />} />
-                  <Route path="*" element={<NotFound />} />
-               </Routes>
-            </Suspense>
-         </Router>
+         {isMobile ? (
+            <MobileApp />
+         ) : (
+            <Router>
+               <Suspense fallback={<Loader />}>
+                  <Routes>
+                     <Route path="/" element={<Home />} />
+                     {/* <Route path="/home" element={<Home />} /> */}
+                     <Route path="/game" element={<Game />} />
+                     <Route path="*" element={<NotFound />} />
+                  </Routes>
+               </Suspense>
+            </Router>
+         )}
       </>
    );
 };
