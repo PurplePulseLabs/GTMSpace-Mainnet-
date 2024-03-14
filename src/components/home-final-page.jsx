@@ -184,9 +184,9 @@ const HomeFinalPage = () => {
             </div>
             {/* about page */}
             <div id="aboutpage" className="aboutpage-container">
-               <div className=" max-w-[50em] mt-[30em] ml-14 min-h-[40em]  ">
+               <div className=" max-w-[70%] mt-[30em] ml-14 min-h-[40em]  ">
                   <header className="text-white text-[5rem] ">About GTM</header>
-                  <p className=" text-white text-wrap leading-[2.5em] text-[1.2rem] text-xl fone">
+                  <p className=" text-white text-wrap leading-[2.5em] text-[1.5rem] fone">
                      <span className=" "> $GTM ARCADE </span> <br /> Welcome to
                      GTM Arcade - Your Ultimate Gaming Destination! Are you a
                      passionate gamer seeking rewards for your gaming prowess?
