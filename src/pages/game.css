@@ -32,6 +32,7 @@
 }
 
 .game-page-container {
+  background: #000000;
   position: relative;
   width: 100vw;
   height: 100vh;
