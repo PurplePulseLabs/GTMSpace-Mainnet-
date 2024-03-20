@@ -9,8 +9,7 @@ import { useAccount } from "wagmi";
 import { useMediaQuery } from "react-responsive";
 import MobileApp from "./components/MobileApp.jsx";
 
-const Home = lazy(() => import("./pages/HomeFinal.jsx"));
-const Landing = lazy(() => import("./pages/landing.jsx"));
+const Home = lazy(() => import("./pages/home.jsx"));
 const Game = lazy(() => import("./pages/game.jsx"));
 const NotFound = lazy(() => import("./pages/not-found.jsx"));
 const App = () => {

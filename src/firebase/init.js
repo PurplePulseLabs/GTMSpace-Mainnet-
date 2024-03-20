@@ -1,15 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-const firebaseConfig = {
-  apiKey: "AIzaSyDNT6boX6SzM60b4hrigplhDiwL8gpVNvc",
-  authDomain: "gtm-space.firebaseapp.com",
-  projectId: "gtm-space",
-  storageBucket: "gtm-space.appspot.com",
-  messagingSenderId:"543339488272",
-  appId: "1:543339488272:web:556ea799a767c742f51695",
-  measurementId: "G-NYV9H41HB1",
-  databaseURL: `https://gtm-space.firebaseio.com`,
-};
 
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_API_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+};
+console.log(process.env.REACT_APP_DATABASE_URL)
 const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
