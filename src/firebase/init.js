@@ -11,6 +11,5 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
   databaseURL: process.env.REACT_APP_DATABASE_URL,
 };
-console.log(process.env.REACT_APP_DATABASE_URL)
 const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);

@@ -23,17 +23,17 @@ const GamePage = () => {
 
    useEffect(() => {
       const handleMessage = async (event) => {
-         console.log("Event:", event);
+         // console.log("Event:", event);
          // Check if the message is from the iframe
          if (event.origin !== gameLink) {
-            console.log(
-               "Received message from untrusted origin:",
-               event.origin
-            );
+            // console.log(
+            //    "Received message from untrusted origin:",
+            //    event.origin
+            // );
             return; // Ignore messages from untrusted origins
          }
-         console.log("Received message from trusted origin:", event.origin);
-         console.log("INITIALISED");
+         // console.log("Received message from trusted origin:", event.origin);
+         // console.log("INITIALISED");
          // if(address==null||balance<10000){
          //   alert("Ineligible to play")
          // }
@@ -44,21 +44,21 @@ const GamePage = () => {
          const scoreData = event.data.score;
          if (scoreData !== undefined) {
             // Log the received score
-            console.log("Received score from iframe:", scoreData);
+            // console.log("Received score from iframe:", scoreData);
             if (scoreData > 0) {
                let prevScore = await getSingleUserScore(address);
                // let prevScore = 0;
-               console.log("Prev score found ", prevScore);
+               // console.log("Prev score found ", prevScore);
                let finalScore = scoreData * scoreWeight;
                if (prevScore < finalScore) {
                   await deleteSingleUserScore(address);
                   await addUserScore(GameID, address, finalScore);
                } else {
-                  console.log("Not a highest score");
+                  // console.log("Not a highest score");
                }
             }
          } else {
-            console.log("Received message from iframe:", event.data); // Log the entire message for debugging
+            // console.log("Received message from iframe:", event.data); // Log the entire message for debugging
          }
       };
 

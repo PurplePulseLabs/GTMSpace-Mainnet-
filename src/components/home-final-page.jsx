@@ -45,11 +45,11 @@ const HomeFinalPage = () => {
       }
       // Check if the account address is available
       if (address) {
-         console.log("Account Address:", address);
-         console.log("Balance:", _balance);
+         // console.log("Account Address:", address);
+         // console.log("Balance:", _balance);
          setIsConnected(true);
       } else {
-         console.log("No account connected.");
+         // console.log("No account connected.");
          setIsConnected(false);
          dispatch(setBalance(0));
       }
@@ -119,7 +119,7 @@ const HomeFinalPage = () => {
                <div className="  flex justify-center gap-2 xl:gap-5 items-center">
                   {isConnected ? (
                      _balance >= 0 ? (
-                        chain?.name === "Polygon Mumbai" ? (
+                        chain?.name === "Ethereum" ? (
                            <div className=" bg-white flex items-center gap-1 p-1 xl:gap-2 xl:p-2 rounded-lg ">
                               <p className=" text-xl font-semibold overflow-hidden">
                                  {_balance <= 9999

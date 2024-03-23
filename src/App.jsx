@@ -17,12 +17,10 @@ const App = () => {
 
    useEffect(() => {
       window.ethereum.on("accountsChanged", function (accounts) {
-         console.log("Ethereum accounts changed:", accounts);
          window.location.reload();
       });
 
       window.ethereum.on("networkChanged", function (networkId) {
-         console.log("Ethereum network changed:", networkId);
          window.location.reload();
       });
 
@@ -32,14 +30,14 @@ const App = () => {
       };
    }, []);
 
-   const accountInfo = useAccount({
-      onConnect: ({ address, connector, isReconnected }) => {
-         console.log("Connected", { address, connector, isReconnected });
-      },
-      onDisconnect: () => {
-         console.error("Disconnected");
-      },
-   });
+   // const accountInfo = useAccount({
+   //    onConnect: ({ address, connector, isReconnected }) => {
+   //       console.log("Connected", { address, connector, isReconnected });
+   //    },
+   //    onDisconnect: () => {
+   //       console.error("Disconnected");
+   //    },
+   // });
 
    return (
       <>
