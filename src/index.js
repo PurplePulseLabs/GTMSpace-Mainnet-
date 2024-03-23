@@ -19,7 +19,7 @@ import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { metaMaskWallet } from "@rainbow-me/rainbowkit/wallets";
 // import { createConfig } from 'wagmi';
 const { chains, provider, webSocketProvider } = configureChains(
-   [Number(process.env.REACT_APP_IS_MAINNET) ? mainnet : polygonMumbai],
+   [mainnet],
    [
       alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_API }),
       publicProvider(),

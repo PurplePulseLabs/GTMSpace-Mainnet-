@@ -38,7 +38,7 @@ export default function MediaCard({
                      {renderStars()}
                   </div>
                </div>
-               {balance >= 10000 && chain?.name === "Polygon Mumbai" ? (
+               {balance >= 1000 && chain?.name === "Polygon Mumbai" ? (
                   <Link to="/game" state={{ gameLink, scoreWeight }}>
                      <Button text={"Play"} />
                   </Link>
