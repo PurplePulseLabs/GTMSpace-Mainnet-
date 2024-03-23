@@ -13,7 +13,7 @@ const GamePage = () => {
       name: "GTM Clash of Space",
       imageSrc: spaceclashimg,
       gameLink: "https://clash-of-space.netlify.app",
-      scoreWeight: 1,
+      scoreWeight: 3,
     },
     {
       name: "SpeedBounce",
@@ -25,25 +25,25 @@ const GamePage = () => {
       name: "RandomBounce",
       imageSrc: randombounceimg,
       gameLink: "https://randombounce.vercel.app",
-      scoreWeight: 5,
+      scoreWeight: 4,
     },
     {
       name: "BrickBounce",
       imageSrc: brickbounceimg,
       gameLink: "https://brickbounce.vercel.app",
-      scoreWeight: 10,
+      scoreWeight: 3,
     },
     {
       name: "Snake",
       imageSrc: snakeimg,
       gameLink: "https://snake-game-pi-gilt.vercel.app",
-      scoreWeight: 20,
+      scoreWeight: 4,
     },
     {
       name: "Pacman",
       imageSrc: pacmanimg,
       gameLink: "https://pacman-theta.vercel.app",
-      scoreWeight: 20,
+      scoreWeight: 4,
     },
   ];
 
