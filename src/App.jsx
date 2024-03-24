@@ -16,18 +16,22 @@ const App = () => {
    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
    useEffect(() => {
-      window.ethereum.on("accountsChanged", function (accounts) {
-         window.location.reload();
-      });
+      if (window.ethereum) {
+         window.ethereum.on("accountsChanged", function (accounts) {
+            console.log("Ethereum accounts changed:", accounts);
+            window.location.reload();
+         });
 
-      window.ethereum.on("networkChanged", function (networkId) {
-         window.location.reload();
-      });
+         window.ethereum.on("networkChanged", function (networkId) {
+            console.log("Ethereum network changed:", networkId);
+            window.location.reload();
+         });
 
-      return () => {
-         window.ethereum.removeAllListeners("accountsChanged");
-         window.ethereum.removeAllListeners("networkChanged");
-      };
+         return () => {
+            window.ethereum.removeAllListeners("accountsChanged");
+            window.ethereum.removeAllListeners("networkChanged");
+         };
+      }
    }, []);
 
    // const accountInfo = useAccount({
