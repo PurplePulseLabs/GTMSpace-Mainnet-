@@ -119,13 +119,14 @@ const HomeFinalPage = () => {
                <div className="  flex justify-center gap-2 xl:gap-5 items-center">
                   {isConnected ? (
                      _balance >= 0 ? (
-                        chain?.name === "Ethereum" ? (
+                        chain?.name ===
+                        `${process.env.REACT_APP_IS_MAINNET}` ? (
                            <div className=" bg-white flex items-center gap-1 p-1 xl:gap-2 xl:p-2 rounded-lg ">
                               <p className=" text-xl font-semibold overflow-hidden">
                                  {_balance <= 9999
                                     ? _balance
                                     : `${(_balance / 1000).toFixed(1)}k`}
-                                 GTM
+                                 <span> GTM</span>
                               </p>
                               <img
                                  className=" opacity-100  xl:scale-125 "
