@@ -17,6 +17,7 @@ export default function MediaCard({
    const { address } = useAccount();
    const { chain } = useNetwork();
    const balance = useSelector((state) => state.balance.value);
+
    // Function to generate stars
    const renderStars = () => {
       const stars = [];
@@ -38,13 +39,13 @@ export default function MediaCard({
                      {renderStars()}
                   </div>
                </div>
-               {balance >= 1000 && chain?.name === "Ethereum" ? (
+               {balance >= 1000 && chain?.name === "Polygon Mumbai" ? (
                   <Link to="/game" state={{ gameLink, scoreWeight }}>
                      <Button text={"Play"} />
                   </Link>
                ) : (
                   <div className="need-tokens">
-                     You need at least 10000 GTM tokens to play
+                     You need at least 1000 GTM tokens to play
                   </div>
                )}
             </div>
