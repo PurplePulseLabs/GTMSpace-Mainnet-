@@ -39,7 +39,8 @@ export default function MediaCard({
                      {renderStars()}
                   </div>
                </div>
-               {balance >= 1000 && chain?.name === "Polygon Mumbai" ? (
+               {balance >= 1000 &&
+               chain?.name === `${process.env.REACT_APP_IS_MAINNET}` ? (
                   <Link to="/game" state={{ gameLink, scoreWeight }}>
                      <Button text={"Play"} />
                   </Link>
